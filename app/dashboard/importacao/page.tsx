@@ -2,9 +2,15 @@
 "use client";
 
 import { useState } from "react";
-import OrderMap from "@/components/OrderMap";
+import dynamic from "next/dynamic";
 import OrderList, { Order } from "@/components/OrderTable";
 import { useViewport } from "@/hook/ViewPort";
+
+const OrderMap = dynamic(() => import("@/components/OrderMap"), {
+  ssr: false,
+  loading: () => <div style={{ height: "100%", width: "100%", background: "#e5e7eb" }} />,
+});
+
 
 // Dados das encomendas com localização e restantes campos
 const ORDERS: Order[] = [
