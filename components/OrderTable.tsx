@@ -80,7 +80,7 @@ export default function OrderList({
       headerName: 'Amount',
       filter: 'agNumberColumnFilter',
       sortable: true,
-      cellRenderer: (params: any) => `€ ${Number(params.value).toLocaleString('pt-PT')}`,
+      cellRenderer: (params: { value: number | string }) => `€ ${Number(params.value).toLocaleString('pt-PT')}`,
       cellClass: 'ag-right-aligned',
     },
     {
@@ -99,19 +99,19 @@ export default function OrderList({
       headerName: 'Status',
       filter: 'agTextColumnFilter',
       sortable: true,
-      cellRendererFramework: (params: any) => (
-        <Badge variant={statusVariant(params.value)}>{params.value}</Badge>
+      cellRenderer: (params: { value: string }) => (
+        <Badge variant={statusVariant(params.value) as any}>{params.value}</Badge>
       ),
     },
     {
       headerName: 'Actions',
-      cellRendererFramework: (params: any) => (
+      cellRenderer: (params: { data: Order }) => (
         <Button
           variant="outline"
           size="sm"
           onClick={(e) => {
             e.stopPropagation();
-            openModal(params.data as Order);
+            openModal(params.data);
           }}
         >
           Detalhes
