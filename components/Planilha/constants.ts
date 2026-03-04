@@ -1,0 +1,201 @@
+// constants.ts
+
+export interface Mes {
+  nome: string;
+  semanas: string[];
+}
+
+export interface Metricas {
+  name: string;
+  valores:
+    | Record<string, number>                     // Forecast mensal
+    | Record<string, Record<string, number>>;    // Métricas semanais
+}
+
+export const meses: Mes[] = [
+  { nome: "jan-25", semanas: ["SEM1", "SEM2", "SEM3", "SEM4", "SEM5"] },
+  { nome: "fev-25", semanas: ["SEM6", "SEM7", "SEM8", "SEM9"] },
+  { nome: "mar-25", semanas: ["SEM10", "SEM11", "SEM12", "SEM13", "SEM14"] },
+  { nome: "abr-25", semanas: ["SEM15", "SEM16", "SEM17", "SEM18"] },
+  { nome: "mai-25", semanas: ["SEM19", "SEM20", "SEM21", "SEM22", "SEM23"] },
+  { nome: "jun-25", semanas: ["SEM24", "SEM25", "SEM26", "SEM27"] },
+  { nome: "jul-25", semanas: ["SEM28", "SEM29", "SEM30", "SEM31", "SEM32"] },
+  { nome: "ago-25", semanas: ["SEM33", "SEM34", "SEM35", "SEM36"] },
+  { nome: "set-25", semanas: ["SEM37", "SEM38", "SEM39", "SEM40", "SEM41"] },
+  { nome: "out-25", semanas: ["SEM42", "SEM43", "SEM44", "SEM45"] },
+  { nome: "nov-25", semanas: ["SEM46", "SEM47", "SEM48", "SEM49", "SEM50"] },
+  { nome: "dez-25", semanas: ["SEM51", "SEM52", "SEM53", "SEM54"] },
+];
+
+export const data: Metricas[] = [
+  {
+    name: "Forecast Vendas",
+    valores: {
+      "jan-25": 23263,
+      "fev-25": 26371,
+      "mar-25": 26922,
+      "abr-25": 28084,
+      "mai-25": 31256,
+      "jun-25": 26463,
+      "jul-25": 34605,
+      "ago-25": 29428,
+      "set-25": 24559,
+      "out-25": 24000,
+      "nov-25": 25675,
+      "dez-25": 44652,
+    },
+  },
+  {
+    name: "Vendas Reais",
+    valores: {
+      "jan-25": { SEM1: 6701, SEM2: 4491, SEM3: 4036, SEM4: 4115, SEM5: 5557 },
+      "fev-25": { SEM6: 5394, SEM7: 4933, SEM8: 4572, SEM9: 7098 },
+      "mar-25": { SEM10: 6120, SEM11: 5890, SEM12: 6300, SEM13: 6050, SEM14: 6500 },
+      "abr-25": { SEM15: 6650, SEM16: 6780, SEM17: 6400, SEM18: 6900 },
+      "mai-25": { SEM19: 7200, SEM20: 7000, SEM21: 7300, SEM22: 7100, SEM23: 7400 },
+      "jun-25": { SEM24: 7550, SEM25: 7600, SEM26: 7400, SEM27: 7700 },
+      "jul-25": { SEM28: 7800, SEM29: 7950, SEM30: 8000, SEM31: 8200, SEM32: 8300 },
+      "ago-25": { SEM33: 8450, SEM34: 8600, SEM35: 8200, SEM36: 8800 },
+      "set-25": { SEM37: 9000, SEM38: 8800, SEM39: 9200, SEM40: 9100, SEM41: 9300 },
+      "out-25": { SEM42: 9500, SEM43: 9400, SEM44: 9600, SEM45: 9700 },
+      "nov-25": { SEM46: 9800, SEM47: 9950, SEM48: 10000, SEM49: 10100, SEM50: 10200 },
+      "dez-25": { SEM51: 10300, SEM52: 10400, SEM53: 10500, SEM54: 10600 },
+    },
+  },
+  {
+    name: "Ativações",
+    valores: {
+      "jan-25": { SEM1: 3167, SEM2: 2899, SEM3: 2686, SEM4: 2246, SEM5: 3333 },
+      "fev-25": { SEM6: 3600, SEM7: 3086, SEM8: 2682, SEM9: 0 },
+      "mar-25": { SEM10: 3500, SEM11: 3400, SEM12: 3600, SEM13: 3450, SEM14: 3700 },
+      "abr-25": { SEM15: 3800, SEM16: 3900, SEM17: 3650, SEM18: 4000 },
+      "mai-25": { SEM19: 4100, SEM20: 4050, SEM21: 4200, SEM22: 4150, SEM23: 4300 },
+      "jun-25": { SEM24: 4400, SEM25: 4350, SEM26: 4500, SEM27: 4450 },
+      "jul-25": { SEM28: 4550, SEM29: 4600, SEM30: 4750, SEM31: 4700, SEM32: 4800 },
+      "ago-25": { SEM33: 4900, SEM34: 4850, SEM35: 5000, SEM36: 4950 },
+      "set-25": { SEM37: 5050, SEM38: 5100, SEM39: 5250, SEM40: 5200, SEM41: 5300 },
+      "out-25": { SEM42: 5400, SEM43: 5350, SEM44: 5500, SEM45: 5450 },
+      "nov-25": { SEM46: 5550, SEM47: 5600, SEM48: 5750, SEM49: 5700, SEM50: 5800 },
+      "dez-25": { SEM51: 5900, SEM52: 5850, SEM53: 6000, SEM54: 5950 },
+    },
+  },
+  {
+    name: "Stock Centros Logísticos em SAP",
+    valores: {
+      "jan-25": { SEM1: 55401, SEM2: 53633, SEM3: 35608, SEM4: 78968, SEM5: 88472 },
+      "fev-25": { SEM6: 79789, SEM7: 76134, SEM8: 91347, SEM9: 107019 },
+      "mar-25": { SEM10: 95000, SEM11: 93000, SEM12: 97000, SEM13: 98500, SEM14: 100000 },
+      "abr-25": { SEM15: 102000, SEM16: 101500, SEM17: 103000, SEM18: 104500 },
+      "mai-25": { SEM19: 106000, SEM20: 105500, SEM21: 107000, SEM22: 108500, SEM23: 110000 },
+      "jun-25": { SEM24: 111000, SEM25: 110500, SEM26: 112000, SEM27: 113500 },
+      "jul-25": { SEM28: 115000, SEM29: 114500, SEM30: 116000, SEM31: 117500, SEM32: 119000 },
+      "ago-25": { SEM33: 120000, SEM34: 119500, SEM35: 121000, SEM36: 122500 },
+      "set-25": { SEM37: 124000, SEM38: 123500, SEM39: 125000, SEM40: 126500, SEM41: 128000 },
+      "out-25": { SEM42: 129000, SEM43: 128500, SEM44: 130000, SEM45: 131500 },
+      "nov-25": { SEM46: 133000, SEM47: 132500, SEM48: 134000, SEM49: 135500, SEM50: 137000 },
+      "dez-25": { SEM51: 138000, SEM52: 137500, SEM53: 139000, SEM54: 140500 },
+    },
+  },
+  {
+    name: "Entradas em Stock",
+    valores: {
+      "jan-25": { SEM1: 0, SEM2: 0, SEM3: 61670, SEM4: 0, SEM5: 0 },
+      "fev-25": { SEM6: 0, SEM7: 0, SEM8: 16896, SEM9: 0 },
+      "mar-25": { SEM10: 0, SEM11: 21000, SEM12: 0, SEM13: 0, SEM14: 0 },
+      "abr-25": { SEM15: 0, SEM16: 18500, SEM17: 0, SEM18: 0 },
+      "mai-25": { SEM19: 0, SEM20: 25500, SEM21: 0, SEM22: 0, SEM23: 0 },
+      "jun-25": { SEM24: 0, SEM25: 18000, SEM26: 0, SEM27: 0 },  
+      "jul-25": { SEM28: 0, SEM29: 28500, SEM30: 0, SEM31: 0, SEM32: 0 },
+      "ago-25": { SEM33: 0, SEM34: 21000, SEM35: 0, SEM36: 0 },
+      "set-25": { SEM37: 0, SEM38: 31500, SEM39: 0, SEM40: 0, SEM41: 0 },
+      "out-25": { SEM42: 0, SEM43: 23500, SEM44: 0, SEM45: 0 },
+      "nov-25": { SEM46: 0, SEM47: 34000, SEM48: 0, SEM49: 0, SEM50: 0 },
+      "dez-25": { SEM51: 0, SEM52: 25500, SEM53: 0, SEM54: 0 },
+    },
+  },
+  {
+    name: "Saídas Centros Logísticos",
+    valores: {
+      "jan-25": { SEM1: 2024, SEM2: 1768, SEM3: 18025, SEM4: 1435, SEM5: 7392 },
+      "fev-25": { SEM6: 15284, SEM7: 8683, SEM8: 3655, SEM9: 1269 },
+      "mar-25": { SEM10: 8000, SEM11: 8200, SEM12: 8400, SEM13: 8600, SEM14: 8800 },
+      "abr-25": { SEM15: 9000, SEM16: 9200, SEM17: 9400, SEM18: 9600 },
+      "mai-25": { SEM19: 9800, SEM20: 10000, SEM21: 10200, SEM22: 10400, SEM23: 10600 },
+      "jun-25": { SEM24: 10800, SEM25: 11000, SEM26: 11200, SEM27: 11400 },
+      "jul-25": { SEM28: 11600, SEM29: 11800, SEM30: 12000, SEM31: 12200, SEM32: 12400 },
+      "ago-25": { SEM33: 12600, SEM34: 12800, SEM35: 13000, SEM36: 13200 },
+      "set-25": { SEM37: 13400, SEM38: 13600, SEM39: 13800, SEM40: 14000, SEM41: 14200 },
+      "out-25": { SEM42: 14400, SEM43: 14600, SEM44: 14800, SEM45: 15000 },
+      "nov-25": { SEM46: 15200, SEM47: 15400, SEM48: 15600, SEM49: 15800, SEM50: 16000 },
+      "dez-25": { SEM51: 16200, SEM52: 16400, SEM53: 16600, SEM54: 16800 },
+    },
+  },
+  {
+    name: "Por Recuperar",
+    valores: {
+      "jan-25": { SEM1: 3263, SEM2: 3324, SEM3: 3366, SEM4: 3450, SEM5: 3457 },
+      "fev-25": { SEM6: 3519, SEM7: 3470, SEM8: 3470, SEM9: 3519 },
+      "mar-25": { SEM10: 3600, SEM11: 3620, SEM12: 3640, SEM13: 3660, SEM14: 3680 },
+      "abr-25": { SEM15: 3700, SEM16: 3720, SEM17: 3740, SEM18: 3760 },
+      "mai-25": { SEM19: 3780, SEM20: 3800, SEM21: 3820, SEM22: 3840, SEM23: 3860 },
+      "jun-25": { SEM24: 3880, SEM25: 3900, SEM26: 3920, SEM27: 3940 },
+      "jul-25": { SEM28: 3960, SEM29: 3980, SEM30: 4000, SEM31: 4020, SEM32: 4040 },
+      "ago-25": { SEM33: 4060, SEM34: 4080, SEM35: 4100, SEM36: 4120 },
+      "set-25": { SEM37: 4140, SEM38: 4160, SEM39: 4180, SEM40: 4200, SEM41: 4220 },
+      "out-25": { SEM42: 4240, SEM43: 4260, SEM44: 4280, SEM45: 4300 },
+      "nov-25": { SEM46: 4320, SEM47: 4340, SEM48: 4360, SEM49: 4380, SEM50: 4400 },
+      "dez-25": { SEM51: 4420, SEM52: 4440, SEM53: 4460, SEM54: 4480 },
+    },
+  },
+  {
+    name: "Stock Recuperados",
+    valores: {
+      "jan-25": { SEM1: 346, SEM2: 346, SEM3: 346, SEM4: 346, SEM5: 346 },
+      "fev-25": { SEM6: 346, SEM7: 346, SEM8: 346, SEM9: 346 },
+      "mar-25": { SEM10: 350, SEM11: 350, SEM12: 350, SEM13: 350, SEM14: 350 },
+      "abr-25": { SEM15: 355, SEM16: 355, SEM17: 355, SEM18: 355 },
+      "mai-25": { SEM19: 360, SEM20: 360, SEM21: 360, SEM22: 360, SEM23: 360 },
+      "jun-25": { SEM24: 365, SEM25: 365, SEM26: 365, SEM27: 365 },
+      "jul-25": { SEM28: 370, SEM29: 370, SEM30: 370, SEM31: 370, SEM32: 370 },
+      "ago-25": { SEM33: 375, SEM34: 375, SEM35: 375, SEM36: 375 },
+      "set-25": { SEM37: 380, SEM38: 380, SEM39: 380, SEM40: 380, SEM41: 380 },
+      "out-25": { SEM42: 385, SEM43: 385, SEM44: 385, SEM45: 385 },
+      "nov-25": { SEM46: 390, SEM47: 390, SEM48: 390, SEM49: 390, SEM50: 390 },
+      "dez-25": { SEM51: 395, SEM52: 395, SEM53: 395, SEM54: 395 },
+    },
+  },
+  {
+    name: "Stock Lojas",
+    valores: {
+      "jan-25": { SEM1: 50383, SEM2: 46918, SEM3: 57958, SEM4: 55536, SEM5: 52558 },
+      "fev-25": { SEM6: 50154, SEM7: 51849, SEM8: 56692, SEM9: 54547 },
+      "mar-25": { SEM10: 53000, SEM11: 54000, SEM12: 55000, SEM13: 56000, SEM14: 57000 },
+      "abr-25": { SEM15: 58000, SEM16: 59000, SEM17: 60000, SEM18: 61000 },
+      "mai-25": { SEM19: 62000, SEM20: 63000, SEM21: 64000, SEM22: 65000, SEM23: 66000 },
+      "jun-25": { SEM24: 67000, SEM25: 68000, SEM26: 69000, SEM27: 70000 },
+      "jul-25": { SEM28: 71000, SEM29: 72000, SEM30: 73000, SEM31: 74000, SEM32: 75000 },
+      "ago-25": { SEM33: 76000, SEM34: 77000, SEM35: 78000, SEM36: 79000 },
+      "set-25": { SEM37: 80000, SEM38: 81000, SEM39: 82000, SEM40: 83000, SEM41: 84000 },
+      "out-25": { SEM42: 85000, SEM43: 86000, SEM44: 87000, SEM45: 88000 },
+      "nov-25": { SEM46: 89000, SEM47: 90000, SEM48: 91000, SEM49: 92000, SEM50: 93000 },
+      "dez-25": { SEM51: 94000, SEM52: 95000, SEM53: 96000, SEM54: 97000 },
+    },
+  },
+  {
+    name: "Encomendas | Forecast",
+    valores: {
+      "jan-25": { SEM1: 0, SEM2: 0, SEM3: 0, SEM4: 0, SEM5: 0 },
+      "fev-25": { SEM6: 0, SEM7: 0, SEM8: 0, SEM9: 0 },
+      "mar-25": { SEM10: 0, SEM11: 0, SEM12: 0, SEM13: 0, SEM14: 0 },
+      "abr-25": { SEM15: 0, SEM16: 0, SEM17: 0, SEM18: 0 },
+      "mai-25": { SEM19: 0, SEM20: 0, SEM21: 0, SEM22: 0, SEM23: 0 },
+      "jun-25": { SEM24: 0, SEM25: 0, SEM26: 0, SEM27: 0 },
+      "jul-25": { SEM28: 0, SEM29: 0, SEM30: 0, SEM31: 0, SEM32: 0 },
+      "ago-25": { SEM33: 0, SEM34: 0, SEM35: 0, SEM36: 0 },
+      "set-25": { SEM37: 0, SEM38: 0, SEM39: 0, SEM40: 0, SEM41: 0 },
+      "out-25": { SEM42: 0, SEM43: 0, SEM44: 0, SEM45: 0 },
+      "nov-25": { SEM46: 0, SEM47: 0, SEM48: 0, SEM49: 0, SEM50: 0 },
+      "dez-25": { SEM51: 0, SEM52: 0, SEM53: 0, SEM54: 0 },
+    },
+  },
+];
