@@ -150,9 +150,6 @@ export default function Page() {
     setSelectedId((prev) => (prev === id ? null : id));
   const handleDownload = (order: Order) =>
     order.attachmentUrl && window.open(order.attachmentUrl, "_blank");
-  console.log("Screen:", window.screen.width, "×", window.screen.height);
-  console.log("Viewport:", window.innerWidth, "×", window.innerHeight);
-  console.log("DPR:", window.devicePixelRatio);
 
   return (
     <div className="block p-4">
