@@ -13,21 +13,21 @@ import EditOrderModal from './EditOrderModal';
 export interface Order {
   id: string;
   model: string;
-  poNumber: string;
+  poNumber: string | null;
   supplier: string;
   piNumber: string;
-  ivNumber: string;
+  ivNumber: string | null;
   amount: number;
-  attachmentUrl?: string;
+  attachmentUrl?: string | null;
   units: number;
   by: string;
   exFactory: string;
-  etd: string;
+  etd: string | null;
   eta: string;
-  etaRe: string;
-  status: string;
-  month: string;
-  year: number;
+  etaRe: string | null;
+  status: string | null;
+  month: string | null;
+  year: number | null;
   coords: [number, number];
   label: string;
 }
@@ -156,9 +156,9 @@ export default function OrderList({
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           rowSelection="single"
-          onRowClicked={(e) => onSelect(e.data.id)}
+          onRowClicked={(e) => e.data && onSelect(e.data.id)}
           getRowClass={(params) =>
-            params.data.id === selectedId ? 'bg-gray-100' : undefined
+            params.data?.id === selectedId ? 'bg-gray-100' : undefined
           }
           theme={myTheme}
         />
